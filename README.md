@@ -2,10 +2,10 @@
 
 
 
-<h1>Username:</h1>
+<h3>Username:</h3>
 <p>admin</p>
 <br>
-<h1>Password:</h1>
+<h3>Password:</h3>
 <p>admin</p>
 
 Aşağıdakı linkdə verilmiş Admin template-ə uyğun proyekt hazırlayın:
