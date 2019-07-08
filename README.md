@@ -7,6 +7,7 @@
 <br>
 <h3>Password:</h3>
 <p>admin</p>
+<br>
 
 Aşağıdakı linkdə verilmiş Admin template-ə uyğun proyekt hazırlayın:
 
