@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Login | Fit2Go Admin Template</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- global level css -->
+    <link href="~/Public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- end of global css-->
+    <!-- page level styles-->
+    <link href="~/Public/vendors/iCheck/skins/all.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="vendors/bootstrapvalidator/dist/css/bootstrapValidator.css" rel="stylesheet" />
+    <link href="~/Public/css/custom_css/admin-login.css" rel="stylesheet" type="text/css">
+    <!-- end of page level styles-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="full-content-center">
+            <div class="box bounceInLeft animated">
+                <img src="~/Public/img/logo.png" class="logo" alt="image not found">
+                <h3 class="text-center">Admin Log In</h3>
+                <form class="form" id="log_in" action="@Url.Action("LogIn")" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input type="text" class="form-control" name="Username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input type="password" class="form-control" name="Password" placeholder="Password" required>
+                    </div>
+                    @if (Session["loginError"] != null)
+                    {
+                        <div class="alert alert-danger">@Session["loginError"]</div>
+                        Session["loginError"] = null;
+                    }
+                    <input type="submit" class="btn btn-block btn-warning" value="Log In">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- global js -->
+    <script src="~/Public/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- end of global js -->
+    <!-- begining of page level js -->
+    <script src="~/Public/vendors/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script src="~/Public/vendors/bootstrapvalidator/dist/js/bootstrapValidator.js" type="text/javascript"></script>
+    @*<script src="~/Public/js/custom_js/login1.js" type="text/javascript"></script>*@
+    <!-- end of page level js -->
+</body>
+
+
+</html>

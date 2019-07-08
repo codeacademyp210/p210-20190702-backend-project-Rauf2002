@@ -1,0 +1,33 @@
+﻿@model List<FitGo.Models.Users>
+
+@{
+    ViewBag.Title = "UserTable";
+    Layout = "~/Views/Shared/_LayoutTemplate.cshtml";
+}
+
+@section style{
+    <title>User Table</title>
+    }
+
+<aside class="right-side right-padding">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Pincode</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                
+            <tr>
+               
+                <td> <a href="@Url.Action("Details",new { id = user.Id})">@user.Name</a></td>
+                    <td><a href="@Url.Action("Details",new { id = user.Id})">@user.Pincode</a></td>
+            </tr>
+                
+            }
+        </tbody>
+    </table>
+</aside>
